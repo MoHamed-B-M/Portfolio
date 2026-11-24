@@ -41,7 +41,16 @@ const ContactSection = () => {
               >
                 {config.secondaryEmail.replace(/@/g, "(at)")}
               </a>
-              . You can also drop your info here.
+              . You can also message me on WhatsApp at{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={config.whatsappUrl}
+                className="text-gray-200 cursor-can-hover rounded-lg"
+              >
+                {config.social.whatsapp}
+              </a>
+              , or drop your info here.
             </CardDescription>
           </CardHeader>
           <CardContent>

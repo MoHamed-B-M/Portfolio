@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/tooltip";
 import { BlurIn, BoxReveal } from "../reveal-animations";
 import ScrollDownIcon from "../scroll-down-icon";
-import { SiGithub, SiLinkedin } from "react-icons/si";
+import { SiGithub, SiLinkedin, SiWhatsapp } from "react-icons/si";
 import { config } from "@/data/config";
 
 import SectionWrapper from "../ui/section-wrapper";
@@ -109,6 +109,8 @@ const HeroSection = () => {
                     <Link
                       href={config.social.github}
                       target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="GitHub"
                       className="cursor-can-hover"
                     >
                       <Button variant={"outline"}>
@@ -118,10 +120,23 @@ const HeroSection = () => {
                     <Link
                       href={config.social.linkedin}
                       target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
                       className="cursor-can-hover"
                     >
                       <Button variant={"outline"}>
                         <SiLinkedin size={24} />
+                      </Button>
+                    </Link>
+                    <Link
+                      href={config.whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="WhatsApp"
+                      className="cursor-can-hover"
+                    >
+                      <Button variant={"outline"}>
+                        <SiWhatsapp size={24} />
                       </Button>
                     </Link>
                   </div>

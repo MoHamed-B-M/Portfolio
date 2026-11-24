@@ -2,7 +2,7 @@
 
 IT Student & Developer. Third-year MDW student at ISET Sidi Bouzid, working across front-end, back-end, and Android development.
 
-[Live site](https://portfolio-seven-gamma-tq68uxztjv.vercel.app) · [Online CV](https://portfolio-seven-gamma-tq68uxztjv.vercel.app/resume) · [GitHub repository](https://github.com/MoHamed-B-M/Portfolio) · [LinkedIn](https://www.linkedin.com/in/hama-ben-hama-bba490441/)
+[Live site](https://portfolio-seven-gamma-tq68uxztjv.vercel.app) · [Online CV](https://portfolio-seven-gamma-tq68uxztjv.vercel.app/resume) · [WhatsApp](https://wa.me/21653070909) · [GitHub repository](https://github.com/MoHamed-B-M/Portfolio) · [LinkedIn](https://www.linkedin.com/in/hama-ben-hama-bba490441/)
 
 [![GitHub stars](https://img.shields.io/github/stars/MoHamed-B-M/Portfolio?style=flat&logo=github)](https://github.com/MoHamed-B-M/Portfolio/stargazers)
 [![Forks](https://img.shields.io/github/forks/MoHamed-B-M/Portfolio?style=flat&logo=github)](https://github.com/MoHamed-B-M/Portfolio/network/members)
@@ -30,6 +30,10 @@ Tools, systems, testing, and interests sections:
 
 ![Tools and interests sections](public/assets/screenshots/toolkit-sections.png)
 
+Contact section with direct WhatsApp link:
+
+![Contact section with WhatsApp](public/assets/screenshots/contact-desktop.png)
+
 Online CV:
 
 ![Online CV on desktop](public/assets/screenshots/resume-desktop.png)
@@ -48,7 +52,7 @@ These captures live in `public/assets/screenshots`. Project cards continue to us
 - **Testing** section with Unit, Integration, and End-to-end.
 - **Interests** section with Mechanics, Electricity, and Arduino & robotics.
 - **Online CV** at `/resume`, generated from portfolio data. It replaces the old PDF viewer and provides a browser Print / Save PDF action.
-- **Contact form** delivered through Resend.
+- **Contact options** with direct email and WhatsApp links, plus a contact form delivered through Resend.
 - **Blog** routes driven by MDX content under `content/blogs`.
 - **Optional realtime features**: live cursors, presence, and chat when `NEXT_PUBLIC_WS_URL` is configured.
 - **Light and dark themes**, responsive layouts, and reduced-motion handling.
@@ -116,7 +120,7 @@ The production build does not require `RESEND_API_KEY`; set it in production so 
 | `src/components/sections/` | Hero, skills, experience, projects, toolkit, and contact sections. |
 | `src/components/project-readme.tsx` | Sanitized GitHub-flavored README renderer with dark styling and code highlighting. |
 | `src/components/scrolling-preview.tsx` | Card preview with wallpaper fallback and hover pan behavior. |
-| `src/data/config.ts` | Name, role, bio, emails, site, GitHub, LinkedIn, and metadata. |
+| `src/data/config.ts` | Name, role, bio, emails, WhatsApp, site, GitHub, LinkedIn, and metadata. |
 | `src/data/constants.ts` | 17 skills, keyboard settings, and Enactus/Tunivision experience. |
 | `src/data/projects.tsx` | Project names, descriptions, stacks, thumbnails, repository links, and README content. |
 | `public/assets/screenshots/` | Local screenshots used in this README. |

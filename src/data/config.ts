@@ -33,12 +33,16 @@ const config = {
   get ogImg() {
     return this.site + "/assets/seo/og-image.png";
   },
+  get whatsappUrl() {
+    return `https://wa.me/${this.social.whatsapp.replace(/\D/g, "")}`;
+  },
   social: {
     twitter: "",
     linkedin: "https://www.linkedin.com/in/hama-ben-hama-bba490441/",
     instagram: "",
     facebook: "",
     github: "https://github.com/MoHamed-B-M",
+    whatsapp: "+216 53070909",
   },
 };
 export { config };

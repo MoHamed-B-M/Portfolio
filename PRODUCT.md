@@ -30,7 +30,7 @@ The CV is reached through the portfolio's Resume action. Readers may view it onl
 - Include the five supplied projects and their repository links.
 - Include the 17 supplied technologies.
 - Include Enactus Tunisia and Tunivision experience.
-- Contact details are the two supplied email addresses, LinkedIn, and GitHub. No phone number or personal website URL was supplied.
+- Contact details are the two supplied email addresses, WhatsApp (`+216 53070909`), LinkedIn, and GitHub. No personal website URL was supplied.
 - Do not invent a graduation date, GPA, employment history, metrics, testimonials, or availability claims.
 - Leave the rest of the portfolio layout, animations, and 3D components unchanged.
 - Provide a browser print path for PDF output.
@@ -42,7 +42,7 @@ Professional, clean, one-page, no emojis, no decorative icon language in place o
 
 ## Evidence on Hand
 
-- `src/data/config.ts`: name, role, bio, emails, site, social links.
+- `src/data/config.ts`: name, role, bio, emails, WhatsApp, site, social links.
 - `src/data/constants.ts`: 17 skills and Enactus/Tunivision experience.
 - `src/data/projects.tsx`: five projects with descriptions, tech stacks, and repository URLs.
 - The former `public/Mohamed_Ben_Mohamed_Resume.pdf` placeholder has been removed; `/resume` is now the CV source of truth.

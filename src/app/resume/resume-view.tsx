@@ -47,6 +47,7 @@ const displayUrl = (url: string) =>
 const contactItems = [
   { label: config.email, href: `mailto:${config.email}` },
   { label: config.secondaryEmail, href: `mailto:${config.secondaryEmail}` },
+  { label: config.social.whatsapp, href: config.whatsappUrl },
   { label: displayUrl(config.social.linkedin), href: config.social.linkedin },
   { label: displayUrl(config.social.github), href: config.social.github },
 ];
