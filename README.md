@@ -2,7 +2,7 @@
 
 IT Student & Developer. Third-year MDW student at ISET Sidi Bouzid, working across front-end, back-end, and Android development.
 
-[GitHub repository](https://github.com/MoHamed-B-M/Portfolio) · [LinkedIn](https://www.linkedin.com/in/hama-ben-hama-bba490441/) · [Online CV source](src/app/resume/page.tsx)
+[Live site](https://portfolio-rmdff6krb-hamas-projects-af7b1483.vercel.app) · [Online CV](https://portfolio-rmdff6krb-hamas-projects-af7b1483.vercel.app/resume) · [GitHub repository](https://github.com/MoHamed-B-M/Portfolio) · [LinkedIn](https://www.linkedin.com/in/hama-ben-hama-bba490441/)
 
 [![GitHub stars](https://img.shields.io/github/stars/MoHamed-B-M/Portfolio?style=flat&logo=github)](https://github.com/MoHamed-B-M/Portfolio/stargazers)
 [![Forks](https://img.shields.io/github/forks/MoHamed-B-M/Portfolio?style=flat&logo=github)](https://github.com/MoHamed-B-M/Portfolio/network/members)
@@ -155,6 +155,8 @@ Keys follow the order of `SKILLS`. Rows adjust automatically to the number of sk
 Realtime features are optional and require a separate backend. They activate automatically when `NEXT_PUBLIC_WS_URL` is set. Without it, the portfolio works as a static site. The backend API is intentionally private.
 
 ## Deployment
+
+Live deployment: [portfolio-rmdff6krb-hamas-projects-af7b1483.vercel.app](https://portfolio-rmdff6krb-hamas-projects-af7b1483.vercel.app)
 
 1. Push this repository to GitHub.
 2. Connect it to [Vercel](https://vercel.com).
