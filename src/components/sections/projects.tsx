@@ -47,11 +47,16 @@ const ProjectCard = ({ project }: { project: Project }) => {
             onBlur={() => setIsHovered(false)}
           >
             {/* `src` can be any aspect ratio (tall pages pan, normal ones fit);
-                the wallpaper is an optional /assets/backgrounds/<id>.jpg. */}
+                use the local wallpaper when one exists, otherwise the project
+                thumbnail so preview cards never request a missing file. */}
             <ScrollingPreview
               src={project.src}
               alt={project.title}
-              bg={`/assets/backgrounds/${project.id}.jpg`}
+              bg={
+                project.id === "study4u"
+                  ? "/assets/backgrounds/study4u.jpg"
+                  : project.src
+              }
               isHovered={isHovered}
             />
             <div className="absolute w-full h-24 bottom-0 left-0 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none z-10">

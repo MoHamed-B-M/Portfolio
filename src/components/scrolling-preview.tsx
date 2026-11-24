@@ -36,8 +36,33 @@ const ScrollingPreview = ({
   const viewportRef = useRef<HTMLDivElement>(null);
   const [scrollPx, setScrollPx] = useState(0);
   const [bgReady, setBgReady] = useState(false);
+  const [nearViewport, setNearViewport] = useState(false);
+
+  // A card's screenshot and wallpaper are decorative offscreen assets. Start
+  // their requests only when the card approaches the viewport so they don't
+  // compete with the hero and keycap assets during initial load.
+  useEffect(() => {
+    const target = viewportRef.current;
+    if (!target) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setNearViewport(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setNearViewport(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "600px 0px" }
+    );
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
+    if (!nearViewport) return;
     let cancelled = false;
     const img = new window.Image();
     const compute = () => {
@@ -57,12 +82,12 @@ const ScrollingPreview = ({
       cancelled = true;
       window.removeEventListener("resize", compute);
     };
-  }, [src]);
+  }, [src, nearViewport]);
 
   // Preload the wallpaper so a missing/404 file falls back to the gradient
   // instead of rendering a broken background.
   useEffect(() => {
-    if (!bg) {
+    if (!bg || !nearViewport) {
       setBgReady(false);
       return;
     }
@@ -74,7 +99,7 @@ const ScrollingPreview = ({
     return () => {
       cancelled = true;
     };
-  }, [bg]);
+  }, [bg, nearViewport]);
 
   const scrolls = scrollPx > 0;
   const animate = !reduceMotion && scrolls;
@@ -93,7 +118,7 @@ const ScrollingPreview = ({
           position: "absolute",
           inset: 0,
           backgroundColor: "#0f172a",
-          backgroundImage: bgReady && bg ? `url("${bg}")` : FALLBACK_BG,
+          backgroundImage: nearViewport && bgReady && bg ? `url("${bg}")` : FALLBACK_BG,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -120,7 +145,7 @@ const ScrollingPreview = ({
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: `url("${src}")`,
+            backgroundImage: nearViewport ? `url("${src}")` : "none",
             // Tall pages fill width and pan; normal images cover the frame.
             backgroundSize: scrolls ? "100% auto" : "cover",
             backgroundRepeat: "no-repeat",

@@ -34,6 +34,7 @@ The CV is reached through the portfolio's Resume action. Readers may view it onl
 - Do not invent a graduation date, GPA, employment history, metrics, testimonials, or availability claims.
 - Leave the rest of the portfolio layout, animations, and 3D components unchanged.
 - Provide a browser print path for PDF output.
+- The home page also presents Tools & Network, Systems, Testing, and Interests sections using only user-supplied items.
 
 ## Brand Commitments
 
@@ -45,6 +46,7 @@ Professional, clean, one-page, no emojis, no decorative icon language in place o
 - `src/data/constants.ts`: 17 skills and Enactus/Tunivision experience.
 - `src/data/projects.tsx`: five projects with descriptions, tech stacks, and repository URLs.
 - The former `public/Mohamed_Ben_Mohamed_Resume.pdf` placeholder has been removed; `/resume` is now the CV source of truth.
+- User-supplied home-page lists: deployment, GitHub, Git, Netlify, Vercel; Android, Windows, Linux, ChromeOS; unit, integration, end-to-end; mechanics, electricity, Arduino & robotics.
 
 ## Product Principles
 

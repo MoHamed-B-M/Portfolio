@@ -86,6 +86,8 @@ body {
 
   body {
     @apply bg-background text-foreground;
+    /* Keep fallback metrics close to the web font while Space Grotesk swaps in. */
+    font-size-adjust: from-font;
   }
 
   /* Headings use the display font (--font-display, Unbounded). Body and
@@ -98,6 +100,7 @@ body {
   h5,
   h6 {
     font-family: var(--font-display), sans-serif;
+    font-size-adjust: from-font;
   }
 }
 

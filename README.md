@@ -1,217 +1,170 @@
-<div align="center">
+# MOHAMED BEN MOHAMED — Portfolio
 
-# 🚀 3D Portfolio
+IT Student & Developer. Third-year MDW student at ISET Sidi Bouzid, working across front-end, back-end, and Android development.
 
-**A developer portfolio you can actually play with.** Press keys on a 3D keyboard, watch other visitors' cursors fly by, and chat with whoever's online.
-
-### [✨ GitHub → MoHamed-B-M/Portfolio](https://github.com/MoHamed-B-M/Portfolio)
+[GitHub repository](https://github.com/MoHamed-B-M/Portfolio) · [LinkedIn](https://www.linkedin.com/in/hama-ben-hama-bba490441/) · [Online CV source](src/app/resume/page.tsx)
 
 [![GitHub stars](https://img.shields.io/github/stars/MoHamed-B-M/Portfolio?style=flat&logo=github)](https://github.com/MoHamed-B-M/Portfolio/stargazers)
 [![Forks](https://img.shields.io/github/forks/MoHamed-B-M/Portfolio?style=flat&logo=github)](https://github.com/MoHamed-B-M/Portfolio/network/members)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Next.js 16](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
+[![pnpm](https://img.shields.io/badge/pnpm-11.20.0-ff69b4?logo=pnpm)](https://pnpm.io)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/MoHamed-B-M/Portfolio)
 
-<!-- swap for demo video: drag an .mp4 into the GitHub web editor, paste the user-attachments URL on its own line here -->
-![Portfolio Preview](public/assets/projects-screenshots/study4u/landing.png)
+## Screenshots
 
-</div>
+Desktop home page:
 
-> **Free to use!** This portfolio is open source. If you use it, a credit/link back would be really appreciated 🙏
+![Portfolio home page on desktop](public/assets/screenshots/home-desktop.png)
 
-## ✨ Features
+Home page on mobile:
 
-- **Interactive 3D Keyboard** — Programmatically generated Chibi keyboard where each keycap represents a skill, revealing titles and descriptions on hover/press. Keycap colors and logos are configured in `src/data/constants.ts`.
-- **Live Multiplayer** — See other visitors' cursors in realtime, who's online, and chat with them ([details](#-realtime-features-optional))
-- **Buttery Animations** — GSAP + Framer Motion powered scroll, hover, and reveal animations
-- **Space Theme** — Floating particles on a dark canvas for a cosmic vibe
-- **Easter Eggs** — Open DevTools and follow the clues 🐱
-- **Light & Dark Mode** — Full theme support with cheeky disclaimer toasts
-- **Responsive** — Works across all screen sizes
-- **Contact Form** — Email delivery via Resend
-- **Analytics** _(optional)_ — Umami analytics integration
+![Portfolio home page on mobile](public/assets/screenshots/home-mobile.png)
 
-## 🛠️ Tech Stack
+Projects section:
+
+![Projects section with project cards](public/assets/screenshots/projects-desktop.png)
+
+Tools, systems, testing, and interests sections:
+
+![Tools and interests sections](public/assets/screenshots/toolkit-sections.png)
+
+Online CV:
+
+![Online CV on desktop](public/assets/screenshots/resume-desktop.png)
+
+![Online CV on mobile](public/assets/screenshots/resume-mobile.png)
+
+These captures live in `public/assets/screenshots`. Project cards continue to use their repository or Open Graph thumbnails from `src/data/projects.tsx`.
+
+## What is in this portfolio
+
+- **Interactive 3D keyboard** built from the 17 technologies in `src/data/constants.ts`. Each key reveals a skill title and description on hover, focus, or press.
+- **Hero and skills sections** with GSAP and Framer Motion scroll/hover/reveal animation.
+- **Projects** with exact names, descriptions, stacks, repository links, and original thumbnails. Project cards open a README modal rendered with GitHub dark markdown styling and syntax highlighting.
+- **Tools & Network** section with Deployment, GitHub, Git, Netlify, and Vercel.
+- **Systems** section with Android, Windows, Linux, and ChromeOS.
+- **Testing** section with Unit, Integration, and End-to-end.
+- **Interests** section with Mechanics, Electricity, and Arduino & robotics.
+- **Online CV** at `/resume`, generated from portfolio data. It replaces the old PDF viewer and provides a browser Print / Save PDF action.
+- **Contact form** delivered through Resend.
+- **Blog** routes driven by MDX content under `content/blogs`.
+- **Optional realtime features**: live cursors, presence, and chat when `NEXT_PUBLIC_WS_URL` is configured.
+- **Light and dark themes**, responsive layouts, and reduced-motion handling.
+
+## Tech stack
 
 | Layer | Technologies |
 |---|---|
-| **Framework** | Next.js 16.2.2, React 19.2.4, TypeScript |
-| **Styling** | Tailwind CSS, Shadcn UI, Aceternity UI |
-| **Animation** | GSAP, Framer Motion |
-| **3D** | @chibi3d/runtime, Three.js, React Three Fiber |
-| **Email** | Resend |
-| **Misc** | Lenis (smooth scroll), Zod, next-themes |
+| Framework | Next.js 16.2.2, React 19.2.4, TypeScript |
+| Styling | Tailwind CSS, shadcn-style UI primitives, CSS Modules |
+| Animation | GSAP, Framer Motion, Lenis |
+| 3D | @chibi3d/runtime, Three.js, React Three Fiber |
+| Markdown | react-markdown, remark-gfm, rehype-highlight, github-markdown-css |
+| Email | Resend |
+| Optional realtime | Socket.IO client |
+| Analytics | Umami, Next.js third-party scripts |
+| Package manager | pnpm 11.20.0 |
 
----
-
-## 🚀 Getting Started
+## Getting started
 
 ### Prerequisites
 
-- Node.js 20.9+ for Next.js 16; use a current LTS release with pnpm 11
+- Node.js 20.9 or newer
 - pnpm 11.20.0
 
-### Installation
+### Install and run
 
-1. **Clone the repository:**
+```bash
+git clone https://github.com/MoHamed-B-M/Portfolio.git
+cd Portfolio
+pnpm install
+cp .env.example .env.local
+pnpm dev
+```
 
-    ```bash
-    git clone https://github.com/MoHamed-B-M/Portfolio.git
-    cd Portfolio
-    ```
+Open `http://localhost:3000`.
 
-2. **Install dependencies:**
+### Environment variables
 
-    ```bash
-    pnpm install
-    ```
-
-3. **Set up environment variables:**
-
-    Copy `.env.example` to `.env.local` and fill in the values:
-
-    ```bash
-    cp .env.example .env.local
-    ```
-
-    | Variable | Required | Description |
-    |---|---|---|
-    | `RESEND_API_KEY` | Yes | API key from [Resend](https://resend.com) for the contact form |
-    | `NEXT_PUBLIC_WS_URL` | No | WebSocket server URL for realtime features (cursors, chat, presence) |
-    | `UMAMI_DOMAIN` | No | Umami analytics script URL |
-    | `UMAMI_SITE_ID` | No | Umami website ID |
-
-4. **Run the development server:**
-
-    ```bash
-    pnpm dev
-    ```
-
-5. Open [http://localhost:3000](http://localhost:3000) and see the magic ✨
-
----
+| Variable | Required | Purpose |
+|---|---|---|
+| `RESEND_API_KEY` | Yes | Sends messages from the contact form. A production build also needs this value; use a placeholder only for local verification. |
+| `NEXT_PUBLIC_WS_URL` | No | Enables live cursors, presence, and chat when a realtime server URL is provided. |
+| `UMAMI_DOMAIN` | No | Overrides the Umami script URL for self-hosted analytics. |
+| `UMAMI_SITE_ID` | No | Enables the public Umami analytics script. |
+| `UMAMI_DEPLOY_SITE_ID` | No | Records deployment hostnames through `/api/collect`. |
+| `NEXT_PUBLIC_LEGACY_HOST` | No | Shows a one-time "we moved" notice when the old host is detected. |
 
 ## Code checks
-
-Run these before opening a pull request:
 
 ```bash
 pnpm lint
 pnpm typecheck
+pnpm build
 ```
 
-Next.js 16 no longer runs lint during builds. The ESLint CLI uses `eslint.config.mjs`. New React Compiler diagnostics for refs, immutability, effect state updates, and manual memoization report warnings while existing animation and realtime components are migrated. Hook ordering violations remain errors.
+The production build requires `RESEND_API_KEY`. Next.js 16 does not run ESLint during builds, so run `pnpm lint` separately. Blog posts require frontmatter with `title`, `summary`, and `publishedAt` in `YYYY-MM-DD` format; optional fields are `image`, `author`, and `tags`.
 
-Blog frontmatter requires a title, summary, and `publishedAt` date in `YYYY-MM-DD` format. Optional fields are `image`, `author`, and a list of `tags`. Invalid frontmatter raises a content error; unknown blog slugs return a 404.
+## Project structure
 
-Files under `public/assets` can be replaced at the same URL and cache for one hour before revalidation. Next.js content-hashed static assets retain immutable caching.
-
----
-
-## 🎨 Make It Your Own
-
-All personal info is centralized in [`src/data/config.ts`](src/data/config.ts). Edit this single file to rebrand the portfolio:
-
-```ts
-const config = {
-  title: "MOHAMED BEN MOHAMED | IT Student & Developer",
-  description: {
-    long: "Third-year MDW student at ISET Sidi Bouzid working across front-end, back-end and Android.",
-    short: "IT student and developer from ISET Sidi Bouzid, Tunisia.",
-  },
-  keywords: ["Mohamed Ben Mohamed", "IT Student", "Developer"],
-  author: "MOHAMED BEN MOHAMED",
-  email: "benmohamed715@gmail.com",
-  secondaryEmail: "mouhammedbenmed@gmail.com",
-  site: "https://github.com/MoHamed-B-M",
-
-  // GitHub stars button in the header
-  githubUsername: "MoHamed-B-M",
-  githubRepo: "Portfolio",
-
-  social: {
-    twitter: "",
-    linkedin: "https://www.linkedin.com/in/hama-ben-hama-bba490441/",
-    instagram: "",
-    facebook: "",
-    github: "https://github.com/MoHamed-B-M",
-  },
-};
-```
-
-Other files you'll want to customize:
-
-| File | What to change |
+| Path | Purpose |
 |---|---|
-| `src/data/projects.tsx` | Your projects, screenshots, descriptions, and tech stacks |
-| `src/data/constants.ts` | Skills list (name, description, icon) and work experience |
-| `public/assets/` | Your images, OG image, and project screenshots |
+| `src/app/page.tsx` | Home page composition and section order. |
+| `src/app/resume/` | Online CV page, print action, and print stylesheet. |
+| `src/components/sections/` | Hero, skills, experience, projects, toolkit, and contact sections. |
+| `src/components/project-readme.tsx` | Sanitized GitHub-flavored README renderer with dark styling and code highlighting. |
+| `src/components/scrolling-preview.tsx` | Card preview with wallpaper fallback and hover pan behavior. |
+| `src/data/config.ts` | Name, role, bio, emails, site, GitHub, LinkedIn, and metadata. |
+| `src/data/constants.ts` | 17 skills, keyboard settings, and Enactus/Tunivision experience. |
+| `src/data/projects.tsx` | Project names, descriptions, stacks, thumbnails, repository links, and README content. |
+| `public/assets/screenshots/` | Local screenshots used in this README. |
+| `public/assets/keyboard/logos/white/` | Keyboard-only white SVG logos used by the 3D scene. |
 
-Before deploying, set `config.site` to the real deployed origin. The `/resume`
-route now renders an online CV from `src/data/config.ts`, `src/data/constants.ts`,
-and `src/data/projects.tsx`; use the page's Print / save PDF action to export it.
-The Study4u card currently uses placeholder images at
-`public/assets/projects-screenshots/study4u/landing.png` and
-`public/assets/backgrounds/study4u.jpg`.
+## Customize it
 
----
+Central identity and contact details live in [`src/data/config.ts`](src/data/config.ts). Update `config.site` to the real deployed origin before publishing.
 
-## ⌨️ Customize the 3D keyboard
+| File | Change |
+|---|---|
+| `src/data/projects.tsx` | Project titles, summaries, stacks, repository links, thumbnails, and README content. |
+| `src/data/constants.ts` | Skill labels, descriptions, keycap colors, keyboard icons, and experience entries. |
+| `src/components/sections/toolkit.tsx` | Tools & Network, Systems, Testing, and Interests items. |
+| `src/app/resume/resume-view.tsx` | CV content and section order. |
+| `public/assets/screenshots/` | Replace the local captures with updated screenshots. |
+| `public/assets/keyboard/logos/white/` | Keyboard-only SVG logos. The skills grid keeps the original colorful SVGs. |
 
-Apply your color, logo, and layout choices to `SKILLS` in [`src/data/constants.ts`](src/data/constants.ts):
+### 3D keyboard
 
-- `keyboardColor`: keycap color, such as `"#ff9408"`.
-- `keyboardIcon`: copy an SVG URL from [thesvg.org](https://thesvg.org) and paste it here. You can also use a local file under `public/assets/keyboard/logos/`.
-- `label` and `shortDescription`: text shown when interacting with a key.
-- `shortcut`: optional physical key code, such as `"KeyQ"`. Keep shortcuts unique; defaults follow QWERTY letter order.
+Configure each skill in `SKILLS` inside [`src/data/constants.ts`](src/data/constants.ts):
 
-The demo accepts logo names too, but `keyboardIcon` needs an image URL or local asset path. Without keyboard overrides, keys use the skill's `color` and `icon`.
+- `keyboardColor`: keycap color, such as `#ff9408`.
+- `keyboardIcon`: image URL or local path under `public/assets/keyboard/logos/`.
+- `label` and `shortDescription`: text shown when a key is inspected.
+- `shortcut`: optional `KeyboardEvent.code`, such as `KeyQ`. Keep shortcuts unique; defaults follow QWERTY letter order.
 
-Keys follow the order of `SKILLS`. To change the default six columns, pass a second argument to `createKeyboardScene` in [`keyboard-scene.tsx`](src/components/keyboard/keyboard-scene.tsx). Rows adjust automatically to the skill count.
+Keys follow the order of `SKILLS`. Rows adjust automatically to the number of skills.
 
----
+### Online CV
 
-## 🔌 Realtime Features (Optional)
+`/resume` is the source of truth for the CV. It reads profile data from `config.ts`, skills and experience from `constants.ts`, and projects from `projects.tsx`. The Resume button in the hero links to this route. Use the page's **Print / save PDF** button to export a clean A4 document.
 
-The portfolio supports optional realtime features powered by a **separate backend API**:
+## Realtime features
 
-- 🖱️ **Live cursors** — See other visitors' cursors in realtime
-- 👥 **Online presence** — Shows who's currently on the site
-- 💬 **Chat** — Live chat between visitors
-- **Zombie Survival** with multiplayer and leaderboards on the live site.
+Realtime features are optional and require a separate backend. They activate automatically when `NEXT_PUBLIC_WS_URL` is set. Without it, the portfolio works as a static site. The backend API is intentionally private.
 
-These features activate automatically when the `NEXT_PUBLIC_WS_URL` environment variable is set. Without it, the portfolio works perfectly fine as a static site — no realtime features, no backend dependency.
+## Deployment
 
-> [!NOTE]
-> The backend API is **not open source**. This is intentional! Too many people have cloned the portfolio and claimed they built it from scratch. The realtime server stays private to keep the live experience unique and make it stand out.
+1. Push this repository to GitHub.
+2. Connect it to [Vercel](https://vercel.com).
+3. Add the environment variables above in the Vercel dashboard.
+4. Deploy. Vercel handles builds and automatic deployments on every push.
 
+A deployed copy reports its own hostname once per browser through the analytics collector; it does not send visitor, page, or referrer data.
 
----
+## License
 
-## 🚀 Deployment
+MIT. See [LICENSE](LICENSE).
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/MoHamed-B-M/Portfolio)
-
-This site is deployed on **Vercel**. To deploy your own:
-
-1. Push your code to a GitHub repository
-2. Connect the repository to [Vercel](https://vercel.com)
-3. Add your environment variables in the Vercel dashboard
-4. Vercel handles the rest — automatic deployments on every push
-
----
-
-## 🤝 Contributing
-
-If you'd like to contribute or suggest improvements, feel free to open an issue or submit a pull request. All contributions are welcome!
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-This portfolio is maintained at [MoHamed-B-M/Portfolio](https://github.com/MoHamed-B-M/Portfolio).
-
-Note on analytics: a deployed copy reports its own hostname once per browser (nothing else — no visitor, page, or referrer data) so the deployment can be identified.
+Maintained at [MoHamed-B-M/Portfolio](https://github.com/MoHamed-B-M/Portfolio).
