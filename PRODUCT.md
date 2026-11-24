@@ -20,7 +20,7 @@ Mohamed is a third-year MDW student at ISET Sidi Bouzid, Tunisia, working across
 
 ## Operating Context
 
-The CV is reached through the portfolio's Resume action. Readers may view it online or use a print action to save a clean PDF. The document must contain no emojis.
+The CV is reached through the portfolio's Resume action. Readers may view it online or use a print action to save a clean PDF. The document must contain no emojis. The cover letter is reached from the Hero action and the main menu; it reads as a dark document on screen and prints as black text on white A4.
 
 ## Capabilities and Constraints
 
@@ -34,6 +34,7 @@ The CV is reached through the portfolio's Resume action. Readers may view it onl
 - Do not invent a graduation date, GPA, employment history, metrics, testimonials, or availability claims.
 - Leave the rest of the portfolio layout, animations, and 3D components unchanged.
 - Provide a browser print path for PDF output.
+- Present the supplied cover-letter draft verbatim as an editable, printable document at `/cover-letter`.
 - The home page also presents Tools & Network, Systems, Testing, and Interests sections using only user-supplied items.
 
 ## Brand Commitments
@@ -42,6 +43,7 @@ Professional, clean, one-page, no emojis, no decorative icon language in place o
 
 ## Evidence on Hand
 
+- `src/data/cover-letter.ts`: the exact user-supplied cover-letter draft, formatted as editable data.
 - `src/data/config.ts`: name, role, bio, emails, WhatsApp, site, social links.
 - `src/data/constants.ts`: 17 skills and Enactus/Tunivision experience.
 - `src/data/projects.tsx`: five projects with descriptions, tech stacks, and repository URLs.

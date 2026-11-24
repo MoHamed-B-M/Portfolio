@@ -2,7 +2,7 @@
 
 IT Student & Developer. Third-year MDW student at ISET Sidi Bouzid, working across front-end, back-end, and Android development.
 
-[Live site](https://portfolio-seven-gamma-tq68uxztjv.vercel.app) · [Online CV](https://portfolio-seven-gamma-tq68uxztjv.vercel.app/resume) · [WhatsApp](https://wa.me/21653070909) · [GitHub repository](https://github.com/MoHamed-B-M/Portfolio) · [LinkedIn](https://www.linkedin.com/in/hama-ben-hama-bba490441/)
+[Live site](https://portfolio-seven-gamma-tq68uxztjv.vercel.app) · [Online CV](https://portfolio-seven-gamma-tq68uxztjv.vercel.app/resume) · [Cover letter](https://portfolio-seven-gamma-tq68uxztjv.vercel.app/cover-letter) · [WhatsApp](https://wa.me/21653070909) · [GitHub repository](https://github.com/MoHamed-B-M/Portfolio) · [LinkedIn](https://www.linkedin.com/in/hama-ben-hama-bba490441/)
 
 [![GitHub stars](https://img.shields.io/github/stars/MoHamed-B-M/Portfolio?style=flat&logo=github)](https://github.com/MoHamed-B-M/Portfolio/stargazers)
 [![Forks](https://img.shields.io/github/forks/MoHamed-B-M/Portfolio?style=flat&logo=github)](https://github.com/MoHamed-B-M/Portfolio/network/members)
@@ -40,6 +40,10 @@ Online CV:
 
 ![Online CV on mobile](public/assets/screenshots/resume-mobile.png)
 
+Cover letter:
+
+![Cover letter on desktop](public/assets/screenshots/cover-letter-desktop.png)
+
 These captures live in `public/assets/screenshots`. Project cards continue to use their repository or Open Graph thumbnails from `src/data/projects.tsx`.
 
 ## What is in this portfolio
@@ -52,6 +56,7 @@ These captures live in `public/assets/screenshots`. Project cards continue to us
 - **Testing** section with Unit, Integration, and End-to-end.
 - **Interests** section with Mechanics, Electricity, and Arduino & robotics.
 - **Online CV** at `/resume`, generated from portfolio data. It replaces the old PDF viewer and provides a browser Print / Save PDF action.
+- **Cover letter** at `/cover-letter`, stored as editable data in `src/data/cover-letter.ts` and printable as a clean A4 document.
 - **Contact options** with direct email and WhatsApp links, plus a contact form delivered through Resend.
 - **Blog** routes driven by MDX content under `content/blogs`.
 - **Optional realtime features**: live cursors, presence, and chat when `NEXT_PUBLIC_WS_URL` is configured.
@@ -117,6 +122,8 @@ The production build does not require `RESEND_API_KEY`; set it in production so 
 |---|---|
 | `src/app/page.tsx` | Home page composition and section order. |
 | `src/app/resume/` | Online CV page, print action, and print stylesheet. |
+| `src/app/cover-letter/` | Cover letter page, print action, and A4 print styles. |
+| `src/data/cover-letter.ts` | Editable cover-letter copy. |
 | `src/components/sections/` | Hero, skills, experience, projects, toolkit, and contact sections. |
 | `src/components/project-readme.tsx` | Sanitized GitHub-flavored README renderer with dark styling and code highlighting. |
 | `src/components/scrolling-preview.tsx` | Card preview with wallpaper fallback and hover pan behavior. |

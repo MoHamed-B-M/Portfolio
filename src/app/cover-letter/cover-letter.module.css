@@ -1,0 +1,309 @@
+.page {
+  min-height: 100vh;
+  padding: 96px 16px 72px;
+  background: #0a0d13;
+  color: #e8ecf3;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: min(100%, 794px);
+  margin: 0 auto 18px;
+}
+
+.backLink {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #a8b4c4;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #3b4554;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.backLink:hover {
+  color: #f5f7fa;
+  border-color: #f5f7fa;
+}
+
+.printButton {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #0a0d13;
+  background: #f5f7fa;
+  border: 1px solid #f5f7fa;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.printButton:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.backLink:focus-visible,
+.printButton:focus-visible,
+.paper a:focus-visible {
+  outline: 2px solid #f5f7fa;
+  outline-offset: 3px;
+}
+
+.paper {
+  box-sizing: border-box;
+  width: min(100%, 794px);
+  min-height: 1123px;
+  margin: 0 auto;
+  padding: 76px 84px 84px;
+  background: #11151d;
+  border: 1px solid #2b323e;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+  color: #e7ebf1;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 13.5px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+}
+
+.paper ::selection {
+  background: #dfe6ee;
+  color: #0a0d13;
+}
+
+.identity {
+  padding-bottom: 22px;
+  border-bottom: 1px solid #3a4352;
+}
+
+.name {
+  margin: 0;
+  font-family: inherit;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.role {
+  margin: 10px 0 0;
+  font-family: inherit;
+  font-size: 13px;
+  color: #b6c0cd;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 0;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+  color: #aab5c3;
+}
+
+.contact li:not(:last-child)::after {
+  content: "|";
+  margin: 0 8px;
+  color: #4d5766;
+}
+
+.contact a {
+  color: #dfe6ee;
+  text-decoration: none;
+  border-bottom: 1px solid #4a5565;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.contact a:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.subject {
+  max-width: 68ch;
+  margin: 32px 0 0;
+  font-weight: 700;
+  color: #f3f5f8;
+}
+
+.subjectLabel {
+  font-weight: 700;
+}
+
+.salutation {
+  margin: 28px 0 0;
+}
+
+.body p {
+  max-width: 68ch;
+  margin: 16px 0 0;
+}
+
+.closing {
+  margin: 32px 0 0;
+}
+
+.signature {
+  margin: 32px 0 0;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 767px) {
+  .page {
+    padding: 16px 10px 40px;
+  }
+
+  :global(header) {
+    display: none !important;
+  }
+
+  .toolbar {
+    margin-bottom: 14px;
+  }
+
+  .backLink,
+  .printButton {
+    font-size: 12px;
+  }
+
+  .printButton {
+    gap: 7px;
+    padding: 9px 12px;
+  }
+
+  .paper {
+    min-height: 0;
+    padding: 34px 22px 40px;
+    font-size: 12.5px;
+    line-height: 1.68;
+  }
+
+  .name {
+    font-size: 21px;
+    letter-spacing: 0.04em;
+  }
+
+  .role {
+    font-size: 12px;
+  }
+
+  .contact {
+    font-size: 11px;
+  }
+
+  .contact li:not(:last-child)::after {
+    margin: 0 6px;
+  }
+
+  .subject {
+    margin-top: 26px;
+  }
+
+  .signature {
+    margin-top: 26px;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 18mm 20mm;
+  }
+
+  :global(html),
+  :global(body) {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  :global(header),
+  :global(footer),
+  :global(nav),
+  :global(canvas),
+  :global([data-radix-portal]) {
+    display: none !important;
+  }
+
+  .page {
+    min-height: 0;
+    padding: 0;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .toolbar {
+    display: none !important;
+  }
+
+  .paper {
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10.5pt;
+    line-height: 1.5;
+  }
+
+  .paper *,
+  .paper *::before,
+  .paper *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .identity {
+    border-bottom-color: #000000;
+  }
+
+  .name,
+  .subject,
+  .signature,
+  .role,
+  .contact,
+  .contact a,
+  .contactLabel {
+    color: #000000 !important;
+  }
+
+  .contact li:not(:last-child)::after {
+    color: #000000;
+  }
+
+  .paper a {
+    color: #000000 !important;
+    text-decoration: none !important;
+    border-bottom: 0 !important;
+  }
+
+  .subject,
+  .salutation,
+  .body p,
+  .closing,
+  .signature {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .paper ::selection {
+    background: #000000;
+    color: #ffffff;
+  }
+}

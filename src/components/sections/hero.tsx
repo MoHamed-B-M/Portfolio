@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
-import { File, Github, Linkedin } from "lucide-react";
+import { File, FileText, Github, Linkedin } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -86,6 +86,21 @@ const HeroSection = () => {
                     <Button className="flex items-center gap-2 w-full">
                       <File size={24} />
                       <p>Resume</p>
+                    </Button>
+                  </BoxReveal>
+                </Link>
+                <Link
+                  href="/cover-letter"
+                  target="_blank"
+                  className="flex-1"
+                >
+                  <BoxReveal delay={2.1} width="100%">
+                    <Button
+                      variant="outline"
+                      className="flex items-center gap-2 w-full"
+                    >
+                      <FileText size={24} />
+                      <p>Cover Letter</p>
                     </Button>
                   </BoxReveal>
                 </Link>
