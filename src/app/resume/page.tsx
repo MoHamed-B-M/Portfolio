@@ -1,9 +1,9 @@
 import ResumeView from "./resume-view";
 
 export const metadata = {
-  title: "Résumé | Naresh Khatri",
+  title: "CV | MOHAMED BEN MOHAMED",
   description:
-    "Résumé of Naresh Khatri — Senior Full-Stack Engineer. View online or download the PDF.",
+    "Professional CV for MOHAMED BEN MOHAMED — IT Student & Developer. View online or print to PDF.",
 };
 
 export default function ResumePage() {

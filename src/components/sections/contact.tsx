@@ -33,7 +33,15 @@ const ContactSection = () => {
               >
                 {config.email.replace(/@/g, "(at)")}
               </a>{" "}
-              or drop your info here.
+              or{" "}
+              <a
+                target="_blank"
+                href={`mailto:${config.secondaryEmail}`}
+                className="text-gray-200 cursor-can-hover rounded-lg"
+              >
+                {config.secondaryEmail.replace(/@/g, "(at)")}
+              </a>
+              . You can also drop your info here.
             </CardDescription>
           </CardHeader>
           <CardContent>

@@ -4,17 +4,17 @@
 
 **A developer portfolio you can actually play with.** Press keys on a 3D keyboard, watch other visitors' cursors fly by, and chat with whoever's online.
 
-### [✨ Live Demo → nareshkhatri.dev](https://nareshkhatri.dev)
+### [✨ GitHub → MoHamed-B-M/Portfolio](https://github.com/MoHamed-B-M/Portfolio)
 
-[![GitHub stars](https://img.shields.io/github/stars/Naresh-Khatri/3d-portfolio?style=flat&logo=github)](https://github.com/Naresh-Khatri/3d-portfolio/stargazers)
-[![Forks](https://img.shields.io/github/forks/Naresh-Khatri/3d-portfolio?style=flat&logo=github)](https://github.com/Naresh-Khatri/3d-portfolio/network/members)
+[![GitHub stars](https://img.shields.io/github/stars/MoHamed-B-M/Portfolio?style=flat&logo=github)](https://github.com/MoHamed-B-M/Portfolio/stargazers)
+[![Forks](https://img.shields.io/github/forks/MoHamed-B-M/Portfolio?style=flat&logo=github)](https://github.com/MoHamed-B-M/Portfolio/network/members)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Next.js 16](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Naresh-Khatri/3d-portfolio)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/MoHamed-B-M/Portfolio)
 
 <!-- swap for demo video: drag an .mp4 into the GitHub web editor, paste the user-attachments URL on its own line here -->
-![Portfolio Preview](https://github.com/Naresh-Khatri/3d-portfolio/blob/main/public/assets/projects-screenshots/portfolio/landing.png?raw=true)
+![Portfolio Preview](public/assets/projects-screenshots/study4u/landing.png)
 
 </div>
 
@@ -22,7 +22,7 @@
 
 ## ✨ Features
 
-- **Interactive 3D Keyboard** — Programmatically generated Chibi keyboard where each keycap represents a skill, revealing titles and descriptions on hover/press. Try colors, logos, and layouts in the [Chibi keycap customizer](https://chibi.nareshkhatri.dev/demo/keycaps).
+- **Interactive 3D Keyboard** — Programmatically generated Chibi keyboard where each keycap represents a skill, revealing titles and descriptions on hover/press. Keycap colors and logos are configured in `src/data/constants.ts`.
 - **Live Multiplayer** — See other visitors' cursors in realtime, who's online, and chat with them ([details](#-realtime-features-optional))
 - **Buttery Animations** — GSAP + Framer Motion powered scroll, hover, and reveal animations
 - **Space Theme** — Floating particles on a dark canvas for a cosmic vibe
@@ -57,8 +57,8 @@
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/Naresh-Khatri/3d-portfolio.git
-    cd 3d-portfolio
+    git clone https://github.com/MoHamed-B-M/Portfolio.git
+    cd Portfolio
     ```
 
 2. **Install dependencies:**
@@ -115,26 +115,27 @@ All personal info is centralized in [`src/data/config.ts`](src/data/config.ts). 
 
 ```ts
 const config = {
-  title: "Your Name | Your Title",
+  title: "MOHAMED BEN MOHAMED | IT Student & Developer",
   description: {
-    long: "Your long description for SEO...",
-    short: "Your short description...",
+    long: "Third-year MDW student at ISET Sidi Bouzid working across front-end, back-end and Android.",
+    short: "IT student and developer from ISET Sidi Bouzid, Tunisia.",
   },
-  keywords: ["your", "keywords"],
-  author: "Your Name",
-  email: "you@example.com",
-  site: "https://yoursite.com",
+  keywords: ["Mohamed Ben Mohamed", "IT Student", "Developer"],
+  author: "MOHAMED BEN MOHAMED",
+  email: "benmohamed715@gmail.com",
+  secondaryEmail: "mouhammedbenmed@gmail.com",
+  site: "https://github.com/MoHamed-B-M",
 
   // GitHub stars button in the header
-  githubUsername: "your-github-username",
-  githubRepo: "your-repo-name",
+  githubUsername: "MoHamed-B-M",
+  githubRepo: "Portfolio",
 
   social: {
-    twitter: "https://x.com/you",
-    linkedin: "https://linkedin.com/in/you",
-    instagram: "https://instagram.com/you",
-    facebook: "https://facebook.com/you",
-    github: "https://github.com/you",
+    twitter: "",
+    linkedin: "https://www.linkedin.com/in/hama-ben-hama-bba490441/",
+    instagram: "",
+    facebook: "",
+    github: "https://github.com/MoHamed-B-M",
   },
 };
 ```
@@ -147,11 +148,18 @@ Other files you'll want to customize:
 | `src/data/constants.ts` | Skills list (name, description, icon) and work experience |
 | `public/assets/` | Your images, OG image, and project screenshots |
 
+Before deploying, set `config.site` to the real deployed origin. The `/resume`
+route now renders an online CV from `src/data/config.ts`, `src/data/constants.ts`,
+and `src/data/projects.tsx`; use the page's Print / save PDF action to export it.
+The Study4u card currently uses placeholder images at
+`public/assets/projects-screenshots/study4u/landing.png` and
+`public/assets/backgrounds/study4u.jpg`.
+
 ---
 
 ## ⌨️ Customize the 3D keyboard
 
-Try colors, logos, and layouts in the [Chibi keycap customizer](https://chibi.nareshkhatri.dev/demo/keycaps), then apply your choices to `SKILLS` in [`src/data/constants.ts`](src/data/constants.ts):
+Apply your color, logo, and layout choices to `SKILLS` in [`src/data/constants.ts`](src/data/constants.ts):
 
 - `keyboardColor`: keycap color, such as `"#ff9408"`.
 - `keyboardIcon`: copy an SVG URL from [thesvg.org](https://thesvg.org) and paste it here. You can also use a local file under `public/assets/keyboard/logos/`.
@@ -183,7 +191,7 @@ These features activate automatically when the `NEXT_PUBLIC_WS_URL` environment 
 
 ## 🚀 Deployment
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Naresh-Khatri/3d-portfolio)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/MoHamed-B-M/Portfolio)
 
 This site is deployed on **Vercel**. To deploy your own:
 
@@ -204,6 +212,6 @@ If you'd like to contribute or suggest improvements, feel free to open an issue 
 
 This project is open source and available under the [MIT License](LICENSE).
 
-If you use this portfolio, a credit or link back to the [original repo](https://github.com/Naresh-Khatri/3d-portfolio) would be much appreciated ❤️
+This portfolio is maintained at [MoHamed-B-M/Portfolio](https://github.com/MoHamed-B-M/Portfolio).
 
-Note on analytics: a deployed copy reports its own hostname once per browser (nothing else — no visitor, page, or referrer data) so I can see where the template gets used.
+Note on analytics: a deployed copy reports its own hostname once per browser (nothing else — no visitor, page, or referrer data) so the deployment can be identified.

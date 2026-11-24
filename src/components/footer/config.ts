@@ -1,11 +1,11 @@
 const footer: { title: string; href: string }[] = [
   {
-    title: "Blog",
-    href: "/blogs",
+    title: "GitHub",
+    href: "https://github.com/MoHamed-B-M",
   },
   {
-    title: "Newsletter",
-    href: "/news",
+    title: "LinkedIn",
+    href: "https://www.linkedin.com/in/hama-ben-hama-bba490441/",
   },
 ];
 

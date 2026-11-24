@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import {
   ResponsiveDialog,
   ResponsiveDialogContent,
+  ResponsiveDialogDescription,
+  ResponsiveDialogTitle,
   ResponsiveDialogTrigger,
 } from "../ui/responsive-dialog";
-import { FloatingDock } from "../ui/floating-dock";
-import { ScrollArea } from "../ui/scroll-area";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { motion } from "motion/react";
 
 import projects, { Project } from "@/data/projects";
+import ProjectReadme from "@/components/project-readme";
 import { SectionHeader } from "./section-header";
 
 import SectionWrapper from "../ui/section-wrapper";
@@ -32,10 +32,11 @@ const ProjectsSection = () => {
 
 const ProjectCard = ({ project }: { project: Project }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="flex items-center justify-center">
-      <ResponsiveDialog>
+      <ResponsiveDialog open={open} onOpenChange={setOpen}>
         <ResponsiveDialogTrigger className="bg-transparent flex justify-center w-full">
           <div
             className="group relative w-full max-w-[400px] h-auto rounded-lg overflow-hidden ring-1 ring-white/5"
@@ -71,9 +72,12 @@ const ProjectCard = ({ project }: { project: Project }) => {
           <div className="shrink-0 border-b border-border bg-background/80 backdrop-blur-sm px-8 py-5">
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-4 min-w-0">
-                <h4 className="font-display text-xl md:text-2xl font-bold text-foreground tracking-tight truncate">
+                <ResponsiveDialogTitle className="font-display text-xl md:text-2xl font-bold text-foreground tracking-tight truncate">
                   {project.title}
-                </h4>
+                </ResponsiveDialogTitle>
+                <ResponsiveDialogDescription className="sr-only">
+                  README documentation for {project.title}.
+                </ResponsiveDialogDescription>
                 <span className="shrink-0 text-[11px] uppercase tracking-widest text-muted-foreground border border-border rounded-full px-3 py-0.5">
                   {project.category}
                 </span>
@@ -83,13 +87,14 @@ const ProjectCard = ({ project }: { project: Project }) => {
                   <Link
                     href={project.github}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2"
                   >
                     Source
                   </Link>
                 )}
                 {project.live && project.live !== "#" && (
-                  <Link href={project.live} target="_blank">
+                  <Link href={project.live} target="_blank" rel="noopener noreferrer">
                     <button className="group flex items-center gap-2 bg-primary text-primary-foreground text-sm font-medium px-4 py-1.5 rounded-full hover:bg-primary/80 transition-colors">
                       Visit
                       <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -100,48 +105,18 @@ const ProjectCard = ({ project }: { project: Project }) => {
             </div>
           </div>
 
-          {/* Scrollable content */}
-          <ScrollArea className="flex-1" type="always" data-lenis-prevent>
-            <div className="px-8 py-8">
-              {/* Tech stack */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                className="flex flex-col md:flex-row gap-6 md:gap-10 mb-10"
-              >
-                {project.skills.frontend?.length > 0 && (
-                  <div className="flex flex-col items-center md:items-start gap-2">
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-medium">
-                      Frontend
-                    </span>
-                    <FloatingDock items={project.skills.frontend} />
-                  </div>
-                )}
-                {project.skills.backend?.length > 0 && (
-                  <div className="flex flex-col items-center md:items-start gap-2">
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-medium">
-                      Backend
-                    </span>
-                    <FloatingDock items={project.skills.backend} />
-                  </div>
-                )}
-              </motion.div>
-
-              {/* Divider */}
-              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
-
-              {/* Project content */}
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                {project.content}
-              </motion.div>
-            </div>
-          </ScrollArea>
-
+          {/* The README owns this scroll container so the header stays fixed. */}
+          <div
+            className="project-readme-scroll max-h-[80vh] overflow-y-auto overscroll-contain px-6 pb-10 pt-8 md:px-10"
+            data-lenis-prevent
+          >
+            {open && (
+              <ProjectReadme
+                repoUrl={project.github}
+                fallback={project.content}
+              />
+            )}
+          </div>
         </ResponsiveDialogContent>
       </ResponsiveDialog>
     </div>
