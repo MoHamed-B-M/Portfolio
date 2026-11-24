@@ -90,7 +90,7 @@ Open `http://localhost:3000`.
 
 | Variable | Required | Purpose |
 |---|---|---|
-| `RESEND_API_KEY` | Yes | Sends messages from the contact form. A production build also needs this value; use a placeholder only for local verification. |
+| `RESEND_API_KEY` | Yes at runtime | Sends messages from the contact form. The app builds without it, but the API returns a clear error until it is set. |
 | `NEXT_PUBLIC_WS_URL` | No | Enables live cursors, presence, and chat when a realtime server URL is provided. |
 | `UMAMI_DOMAIN` | No | Overrides the Umami script URL for self-hosted analytics. |
 | `UMAMI_SITE_ID` | No | Enables the public Umami analytics script. |
@@ -105,7 +105,7 @@ pnpm typecheck
 pnpm build
 ```
 
-The production build requires `RESEND_API_KEY`. Next.js 16 does not run ESLint during builds, so run `pnpm lint` separately. Blog posts require frontmatter with `title`, `summary`, and `publishedAt` in `YYYY-MM-DD` format; optional fields are `image`, `author`, and `tags`.
+The production build does not require `RESEND_API_KEY`; set it in production so the contact form can send email. Next.js 16 does not run ESLint during builds, so run `pnpm lint` separately. Blog posts require frontmatter with `title`, `summary`, and `publishedAt` in `YYYY-MM-DD` format; optional fields are `image`, `author`, and `tags`.
 
 ## Project structure
 
