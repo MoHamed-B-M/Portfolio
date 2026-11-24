@@ -2,7 +2,7 @@
 
 IT Student & Developer. Third-year MDW student at ISET Sidi Bouzid, working across front-end, back-end, and Android development.
 
-[Live site](https://portfolio-rmdff6krb-hamas-projects-af7b1483.vercel.app) · [Online CV](https://portfolio-rmdff6krb-hamas-projects-af7b1483.vercel.app/resume) · [GitHub repository](https://github.com/MoHamed-B-M/Portfolio) · [LinkedIn](https://www.linkedin.com/in/hama-ben-hama-bba490441/)
+[Live site](https://portfolio-seven-gamma-tq68uxztjv.vercel.app) · [Online CV](https://portfolio-seven-gamma-tq68uxztjv.vercel.app/resume) · [GitHub repository](https://github.com/MoHamed-B-M/Portfolio) · [LinkedIn](https://www.linkedin.com/in/hama-ben-hama-bba490441/)
 
 [![GitHub stars](https://img.shields.io/github/stars/MoHamed-B-M/Portfolio?style=flat&logo=github)](https://github.com/MoHamed-B-M/Portfolio/stargazers)
 [![Forks](https://img.shields.io/github/forks/MoHamed-B-M/Portfolio?style=flat&logo=github)](https://github.com/MoHamed-B-M/Portfolio/network/members)
@@ -156,7 +156,7 @@ Realtime features are optional and require a separate backend. They activate aut
 
 ## Deployment
 
-Live deployment: [portfolio-rmdff6krb-hamas-projects-af7b1483.vercel.app](https://portfolio-rmdff6krb-hamas-projects-af7b1483.vercel.app)
+Live deployment: [portfolio-seven-gamma-tq68uxztjv.vercel.app](https://portfolio-seven-gamma-tq68uxztjv.vercel.app)
 
 1. Push this repository to GitHub.
 2. Connect it to [Vercel](https://vercel.com).
