@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/tooltip";
 import { BlurIn, BoxReveal } from "../reveal-animations";
 import ScrollDownIcon from "../scroll-down-icon";
-import { SiGithub, SiLinkedin, SiWhatsapp } from "react-icons/si";
+import { SiGithub, SiLinkedin, SiWhatsapp, SiYoutube } from "react-icons/si";
 import { config } from "@/data/config";
 
 import SectionWrapper from "../ui/section-wrapper";
@@ -101,6 +101,22 @@ const HeroSection = () => {
                     >
                       <FileText size={24} />
                       <p>Cover Letter</p>
+                    </Button>
+                  </BoxReveal>
+                </Link>
+                <Link
+                  href={config.interviewUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <BoxReveal delay={2.2} width="100%">
+                    <Button
+                      variant="outline"
+                      className="flex items-center gap-2 w-full"
+                    >
+                      <SiYoutube size={24} aria-hidden="true" />
+                      <p>Watch Interview</p>
                     </Button>
                   </BoxReveal>
                 </Link>

@@ -2,7 +2,7 @@
 
 IT Student & Developer. Third-year MDW student at ISET Sidi Bouzid, working across front-end, back-end, and Android development.
 
-[Live site](https://portfolio-seven-gamma-tq68uxztjv.vercel.app) · [Online CV](https://portfolio-seven-gamma-tq68uxztjv.vercel.app/resume) · [Cover letter](https://portfolio-seven-gamma-tq68uxztjv.vercel.app/cover-letter) · [WhatsApp](https://wa.me/21653070909) · [GitHub repository](https://github.com/MoHamed-B-M/Portfolio) · [LinkedIn](https://www.linkedin.com/in/hama-ben-hama-bba490441/)
+[Live site](https://portfolio-seven-gamma-tq68uxztjv.vercel.app) · [Online CV](https://portfolio-seven-gamma-tq68uxztjv.vercel.app/resume) · [Cover letter](https://portfolio-seven-gamma-tq68uxztjv.vercel.app/cover-letter) · [Watch interview](https://youtu.be/G4_4dBZ6GNY) · [WhatsApp](https://wa.me/21653070909) · [GitHub repository](https://github.com/MoHamed-B-M/Portfolio) · [LinkedIn](https://www.linkedin.com/in/hama-ben-hama-bba490441/)
 
 [![GitHub stars](https://img.shields.io/github/stars/MoHamed-B-M/Portfolio?style=flat&logo=github)](https://github.com/MoHamed-B-M/Portfolio/stargazers)
 [![Forks](https://img.shields.io/github/forks/MoHamed-B-M/Portfolio?style=flat&logo=github)](https://github.com/MoHamed-B-M/Portfolio/network/members)
@@ -57,6 +57,7 @@ These captures live in `public/assets/screenshots`. Project cards continue to us
 - **Interests** section with Mechanics, Electricity, and Arduino & robotics.
 - **Online CV** at `/resume`, generated from portfolio data. It replaces the old PDF viewer and provides a browser Print / Save PDF action.
 - **Cover letter** at `/cover-letter`, stored as editable data in `src/data/cover-letter.ts` and printable as a clean A4 document.
+- **Watch Interview** hero link to the supplied YouTube interview.
 - **Contact options** with direct email and WhatsApp links, plus a contact form delivered through Resend.
 - **Blog** routes driven by MDX content under `content/blogs`.
 - **Optional realtime features**: live cursors, presence, and chat when `NEXT_PUBLIC_WS_URL` is configured.

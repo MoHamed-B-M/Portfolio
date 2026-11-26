@@ -35,6 +35,7 @@ The CV is reached through the portfolio's Resume action. Readers may view it onl
 - Leave the rest of the portfolio layout, animations, and 3D components unchanged.
 - Provide a browser print path for PDF output.
 - Present the supplied cover-letter draft verbatim as an editable, printable document at `/cover-letter`.
+- The hero includes a Watch Interview link to the supplied YouTube URL.
 - The home page also presents Tools & Network, Systems, Testing, and Interests sections using only user-supplied items.
 
 ## Brand Commitments

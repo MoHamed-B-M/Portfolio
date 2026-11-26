@@ -25,6 +25,7 @@ const config = {
   email: "benmohamed715@gmail.com",
   secondaryEmail: "mouhammedbenmed@gmail.com",
   site: "https://github.com/MoHamed-B-M",
+  interviewUrl: "https://youtu.be/G4_4dBZ6GNY",
 
   // for github stars button
   githubUsername: "MoHamed-B-M",
